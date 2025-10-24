@@ -1,5 +1,5 @@
 # TAMERS
-Transformer Audio-Text Multimodal Emotion Recognizer for Speech - a novel approach to Speech Emotion Recognition
+Transformer Audio-Text Multimodal Emotion Recognizer for Speech (TAMERS), a novel approach to Speech Emotion Recognition.
 
 # Citations
 
