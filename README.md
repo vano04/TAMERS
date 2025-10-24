@@ -2,6 +2,8 @@
 Transformer Audio-Text Multimodal Emotion Recognizer for Speech - a novel approach to Speech Emotion Recognition
 
 # Citations
+
+If you use this repository or its trained models, please cite the following works:
 ```
 @inproceedings{poria2018meld,
   title     = {MELD: A Multimodal Multi-Party Dataset for Emotion Recognition in Conversation},
