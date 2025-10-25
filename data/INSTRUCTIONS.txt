@@ -13,7 +13,7 @@ My dataloader was written around the following structure:
 Each meta.jsonl has the following structure for data objects:
 {"id:" "...", "audio": "audio/{ID}.wav", "Utterance": "...", "Emotion": "...", "Dialogue_ID": "...", "Utterance_ID": "..."}
 
-I will provide the script I used in this directory, consult the following arguments:
+I will provide the script (transfer.py) I used in this directory, consult the following arguments:
 
 --csv
 This is the path to the CSV file that contains the dataset metadata.
