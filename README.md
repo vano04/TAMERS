@@ -16,6 +16,8 @@ I wanted to learn transformers and apply them to a current problem, so I explore
 - Encoders **frozen**; projection + classifier **trainable**  
 - Labels: anger, disgust, fear, joy, neutral, sadness, surprise
 
+![TAMERS overview](model.png)
+
 ## Training at a Glance
 
 - **Data splits:** MELD `train` for training, `dev` (renamed `eval`) for tuning, `test` held out.  
