@@ -1,0 +1,49 @@
+You will need to download and process the dataset yourself.
+
+The dataset can be obtained from https://affective-meld.github.io.
+Splits are provided in .mp4 format and need to be processed into 16khz .wav files.
+My dataloader was written around the following structure:
+./data/
+    /eval/
+        /audio/...
+        /meta.jsonl
+    /test/...
+    /train/...
+
+Each meta.jsonl has the following structure for data objects:
+{"id:" "...", "audio": "audio/{ID}.wav", "Utterance": "...", "Emotion": "...", "Dialogue_ID": "...", "Utterance_ID": "..."}
+
+I will provide the script I used in this directory, consult the following arguments:
+
+--csv
+This is the path to the CSV file that contains the dataset metadata.
+It’s required — the program won’t run without it.
+
+--media_root
+This is the path to the folder containing the original media files (like audio or video).
+Also required.
+
+--outdir (default: dataset)
+This is the directory where the processed output will be saved, usually WAV files or extracted audio segments.
+
+--sr (default: 16000)
+This sets the sample rate of the audio in hertz.
+16000 Hz is common for speech processing.
+
+--start_idx (default: 1)
+This is the starting index number for naming output files (e.g., 000001.wav).
+
+--id_width (default: 6)
+This controls how many digits are used in the file IDs.
+For example, 6 means IDs like 000001, 000002, etc.
+
+--rms_thresh (default: 1e-4)
+This is the RMS (root mean square) energy threshold.
+Any audio segment with an RMS lower than this is considered silent.
+
+--min_active_ratio (default: 0.01)
+This sets the minimum proportion of audio samples that must be “loud” (above 5 × rms_thresh) for the clip to be accepted.
+If the active ratio is lower, the clip is treated as silent or unusable.
+
+--resume (flag)
+If this is included, the script will skip over files that have already been processed and passed quality checks instead of redoing them.
