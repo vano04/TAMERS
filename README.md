@@ -33,7 +33,7 @@ I wanted to learn transformers and apply them to a current problem, so I explore
 
 ## Remarks
 
-- This **iteration** is a proof of concept showing the architecture works, with **53.26% accuracy** on MELD (7-class).  
+- This **iteration** is a proof of concept showing the architecture works, with **53.26% accuracy** on MELD (7-class). [Releases](../../releases) 
 - For rapid iteration I used GitHub Copilot alongside my own DL knowledge to try alternatives (e.g., sampling schemes, adding/removing MLPs) and validate training behavior.  
 - MELD is relatively small (~13k utterances) and **class-imbalanced** (heavy **neutral**, sparse **disgust**/**fear**), which limits generalization.  
 - On MELD (audio+text), a recent transformer-based approach **MemoCMT** reports **64.18%** test accuracy (HuBERT audio + BERT text; no contrastive pretraining).  
