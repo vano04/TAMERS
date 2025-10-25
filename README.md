@@ -1,5 +1,6 @@
 # TAMERS
 **Transformer Audio–Text Multimodal Emotion Recognizer for Speech (TAMERS)** - a novel approach to Speech Emotion Recognition (SER).
+> Still in active research!
 
 ## Inspiration
 
@@ -47,7 +48,7 @@ Refactor and retrain on **EmoNet-Voice**, with a classification head adapted to 
 
 ## Citations
 
-If you use this repository or its trained models, please cite:
+If you use this repository or its trained models, please cite (including this repository):
 ```
 @inproceedings{poria2018meld,
   title     = {MELD: A Multimodal Multi-Party Dataset for Emotion Recognition in Conversation},
