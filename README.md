@@ -2,6 +2,26 @@
 **Transformer Audio–Text Multimodal Emotion Recognizer for Speech (TAMERS)** - a novel approach to Speech Emotion Recognition (SER).
 > Still in active research!
 
+## How to Run
+After acquiring the model at [Releases](../../releases), evaluating said model is as simple as creating a `checkpoints` directory, placing the `.pt` model in there, and running `analyze.py`. For training your own model please reference the argument flags in `train.py` on how to optimize your training runs.
+```
+usage: train.py [-h] [--root ROOT] [--epochs EPOCHS] [--batch-size BATCH_SIZE] [--num-workers NUM_WORKERS] [--lr LR]
+                [--weight-decay WEIGHT_DECAY] [--min-lr MIN_LR] [--max-weight-decay MAX_WEIGHT_DECAY]
+                [--lr-decay-factor LR_DECAY_FACTOR] [--wd-growth-factor WD_GROWTH_FACTOR]
+                [--hp-patience HP_PATIENCE] [--hp-tolerance HP_TOLERANCE] [--eval-frequency {epoch,step}]
+                [--eval-every EVAL_EVERY] [--eval-batches EVAL_BATCHES] [--eval-shuffle] [--seed SEED]
+                [--use-multi-gpu] [--save-path SAVE_PATH] [--fusion-shared-dim FUSION_SHARED_DIM]
+                [--fusion-dropout FUSION_DROPOUT] [--fusion-hidden-mult FUSION_HIDDEN_MULT]
+                [--fusion-classifier-depth FUSION_CLASSIFIER_DEPTH] [--grad-accum-steps GRAD_ACCUM_STEPS]
+                [--prefetch-factor PREFETCH_FACTOR] [--pin-memory] [--no-pin-memory] [--no-amp]
+                [--metrics-log METRICS_LOG] [--class-weight-gamma CLASS_WEIGHT_GAMMA]
+                [--train-sampler {shuffle,weighted,interleaved}] [--interleave-period INTERLEAVE_PERIOD]
+                [--log-eval-per-class] [--train-metrics-every TRAIN_METRICS_EVERY]
+                [--train-metrics-batches TRAIN_METRICS_BATCHES] [--early-stop-patience EARLY_STOP_PATIENCE]
+                [--early-stop-threshold EARLY_STOP_THRESHOLD] [--max-grad-norm MAX_GRAD_NORM]
+                [--load-checkpoint LOAD_CHECKPOINT]
+```
+
 ## Inspiration
 
 I wanted to learn transformers and apply them to a current problem, so I explored **contrastive pretraining**, specifically **CLAP** (Contrastive Language–Audio Pretraining), on embeddings from a **ViT-style audio encoder (AST)** and an **autoregressive transformer** for text. Training custom encoders would take time, so I used **GPT-2** for text and a **pretrained AST** from **Hugging Face**.
